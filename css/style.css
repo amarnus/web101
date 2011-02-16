@@ -16,7 +16,7 @@ body {
 }
 
 input, textarea {
-  font-size: 13px;
+  font: 13px/1.4em 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 4px;
   resize: none;
 }
