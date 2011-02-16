@@ -27,10 +27,12 @@ function file_sign_guestbook($name, $comment) {
  *
  * Read guestbook entries from a file
  *
+ * @return
+ *   An array of guestbook entries (Each entry is an associative array/dictionary/hash-table)
 */
 function file_fetch_guestbook_entries() {
   $fp = @fopen('guestbook_entries.txt', 'r');
-  if (is_null($fp)) {
+  if (!$fp) {
     return;
   }
   $entries = array();
