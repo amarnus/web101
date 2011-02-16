@@ -6,19 +6,19 @@
 function db_connect() {
   static $db_selected;
   if (!$db_selected) {
-		$db_link = mysql_connect(DB_HOST, DB_USER, DB_PASS);
-		if (!$db_link) {
-		  // Could not connect to the database
-		  message_stack_add(mysql_error()); // Possibly the credentials were wrong
-		  return FALSE;
-	}
-	$db_selected = mysql_select_db('guestbook', $db_link);
-	if (!$db_selected) {
-	  // Not able to select a database
-	  // means the database has not been created
-	  message_stack_add('Database guestbook has not yet been created to store records');
-	  return FALSE;
-	}
+    $db_link = mysql_connect(DB_HOST, DB_USER, DB_PASS);
+    if (!$db_link) {
+      // Could not connect to the database
+      message_stack_add(mysql_error()); // Possibly the credentials were wrong
+      return FALSE;
+  }
+  $db_selected = mysql_select_db('guestbook', $db_link);
+  if (!$db_selected) {
+    // Not able to select a database
+    // means the database has not been created
+    message_stack_add('Database guestbook has not yet been created to store records');
+    return FALSE;
+  }
   }
   return $db_link;
 }
@@ -46,10 +46,10 @@ function db_sign_guestbook($name, $comment, $faculty, $updates, $time) {
   $sql = "INSERT INTO guestbook_entries (name, comment, faculty, email_updates, timestamp) VALUES ('$name', '$comment', '$faculty', '$updates', '$time')";
   mysql_query($sql); // Run the SQL
   if (mysql_errno($link) != 0) { // Implies there was a error
-	  message_stack_add(mysql_error()); // Report the error
+    message_stack_add(mysql_error()); // Report the error
   } 
   else {
-	  message_stack_add("$name, You have signed our guestbook! Thanks =)");
+    message_stack_add("$name, You have signed our guestbook! Thanks =)");
   }
   return;
 }
@@ -69,7 +69,7 @@ function db_fetch_guestbook_entries($from = 0, $count = 10) {
   $records = array();
   $results = mysql_query("SELECT * FROM guestbook_entries ORDER BY timestamp DESC LIMIT $from, $count");
   while($record = mysql_fetch_array($results)) {
-    array_push($records, $record);	
+    array_push($records, $record);  
   }
   return $records;
 }

@@ -8,7 +8,7 @@
  */
 function token_get() {
   if (isset($_SESSION)) {
-	return ($_SESSION['form_token'] = uniqid()); // Set and return form token to a unique string
+  return ($_SESSION['form_token'] = uniqid()); // Set and return form token to a unique string
   }
   return FALSE;
 }

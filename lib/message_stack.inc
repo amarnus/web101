@@ -13,14 +13,14 @@ function message_stack_add($message) {
   // First check if the SESSION array is present
   // This ensures that there is a session currently active
   if (isset($_SESSION)) {
-	if (isset($_SESSION['messages'])) {
-	  array_push($_SESSION['messages'], $message); // Push message into the message stack
-	  return TRUE;
-	}
-	else {
-	  $_SESSION['messages'] = array($message); // Create stack with the message
-	  return TRUE;
-	}
+  if (isset($_SESSION['messages'])) {
+    array_push($_SESSION['messages'], $message); // Push message into the message stack
+    return TRUE;
+  }
+  else {
+    $_SESSION['messages'] = array($message); // Create stack with the message
+    return TRUE;
+  }
   }
   return FALSE;
 }
