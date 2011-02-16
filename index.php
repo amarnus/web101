@@ -17,20 +17,20 @@ if (isset($_POST) && !empty($_POST)) {
     // Otherwise, your site code become susceptible to code injection/SQL injection.
     $save = true; 
     if (empty($_POST['name'])) {
-	    $save = false;
-	    message_stack_add('Required field name is empty');
+      $save = false;
+      message_stack_add('Required field name is empty');
     }
     if (empty($_POST['comment'])) {
-	    $save = false;
-	    message_stack_add('Required field comment is empty');
+      $save = false;
+      message_stack_add('Required field comment is empty');
     }
-	    
+      
     if ($save) {
-	    file_sign_guestbook($_POST['name'], $_POST['comment']);
+      file_sign_guestbook($_POST['name'], $_POST['comment']);
     }
   }
   else {
-    message_stack_add('Unauthorized submission of the form. Please try again.');	
+    message_stack_add('Unauthorized submission of the form. Please try again.');  
   }
   header('HTTP/1.0 303 See Other');
   header('Location: ' . $_SERVER['PHP_SELF']);
@@ -39,8 +39,8 @@ if (isset($_POST) && !empty($_POST)) {
 
 // Variables to be inserted into the template
 $variables = array(
-	'messages' => message_stack_get(),
-	'entries' => file_fetch_guestbook_entries(),
+  'messages' => message_stack_get(),
+  'entries' => file_fetch_guestbook_entries(),
   'current_time' => time(),
   'form_token' => token_get()
 );
