@@ -1,0 +1,39 @@
+ <fieldset>
+    <legend>Experimental fields</legend>
+    <div class="form-item">
+      <!-- HTML5 Email field -->
+      <label for="guestbook_form_email">Email: </label>
+      <input type="email" placeholder="Your valid email address goes here.." name="email" size="60" maxlength="20" id="guestbook_form_email" required>
+    </div>
+    <div class="form-item">
+      <!-- HTML5 Date field -->
+      <label for="guestbook_form_date_of_birth">Date of Birth:</label>
+      <input type="date" id="guestbook_form_date_of_birth">
+    </div>
+    <div class="form-item">
+      <!-- HTML5 Range field -->
+      <label for="guestbook_form_scale">Rate yourself as a programmer in a scale of 10</label>
+      <input type="range" min="0" max="10" step="1" value="5" id="guestbook_form_scale">
+    </div>
+    <div class="form-item">
+      <!-- HTML5 Datalist field -->
+      <label for="guestbook_form_most_visited_website">Most Visited Website on the Internet: </label>
+      <input list="most_visited_website" name="most_visited_website" placeholder="The website that you frequent the most" size="60" id="guestbook_form_most_visited_website">
+      <datalist id="most_visited_website">
+      <option>Facebook</option>
+      <option>Gmail</option>
+      <option>Twitter</option>
+      <option>IVLE</option>
+      </datalist>
+    </div>
+    <div class="form-item">
+      <!-- HTML5 Number field -->
+      <label for="guestbook_form_experience">Years of Web Development Experience: </label>
+      <input type="number" name="experience" max="20" min="0" step="1" value="2" id="guestbook_form_experience">
+    </div>
+    <div class="form-item">
+      <!-- HTML5 Multiple file upload field -->
+      <label for="guestbook_form_files">List of documents from your computer: </label>
+      <input type="file" name="files" id="guestbook_form_files" multiple>
+    </div>
+  </fieldset>

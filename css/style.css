@@ -1,0 +1,138 @@
+/* 
+ * Standard HTML elements first 
+*/
+
+html {
+  overflow: auto;
+  overflow-x: hidden;
+  background-color: #f9f9f9;	
+}
+
+body {
+  font: 13px/1.6em 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  width: 60%;
+  padding: 0;
+}
+
+input, textarea {
+  font-size: 13px;
+  padding: 4px;
+  resize: none;
+}
+
+/*
+ * Page Header
+*/
+header {
+  background-color: black;
+  padding: 1.75em 0;
+  margin: 0;
+  color: white;
+  border-bottom: solid thin #666;
+}
+
+hgroup { text-align: center; }
+
+hgroup h1, hgroup h2 {
+  font-family: Georgia, cursive;
+  font-weight: normal;
+}
+
+hgroup h2 {
+  color: #888;
+  text-transform: lowercase;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0 1em 0 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  padding-left: 0.5em;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #3b5492;
+}
+
+/*
+ * The Guestbook Form
+*/
+form[name="guestbook_form"] label {
+  display: block;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+form[name="guestbook_form"] .form-item {
+  margin-bottom: 20px;
+}
+
+form[name="guestbook_form"] fieldset, article, div.message {
+  border: 1px solid #999;
+  margin-top: 10px;
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+  -webkit-box-shadow: rgba(200, 200, 200, 1) 0 4px 18px;
+  box-shadow: rgba(200, 200, 200, 1) 0
+  border-radius: 11px;
+  padding: 20px;
+  background-color: white;
+}
+
+form[name="guestbook_form"] fieldset legend {
+  display: none;
+}
+
+form[name="guestbook_form"] input[type="submit"] {
+  font-size: 13px;
+  background: #EEE;
+  margin-top: 10px;
+  border: solid thin #999;
+  text-align: center;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover { 
+  background-color: beige;
+  cursor: pointer;
+}
+
+span.small, article time {
+  font-size: 11px;
+  color: #808080;
+}
+
+/*
+ * The Messages Block
+*/
+div#messages div.message {
+  color: #33A333;
+  border: solid thin #C7F2C8;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+
+/*
+ * Guestbook Entries
+*/
+#guestbook_entries article {
+  margin-bottom: 10px;
+  background-color: beige;
+}
+
+/*
+ * Page footer
+ */
+footer {
+  text-align: center;
+  font-size: 11px;
+}
