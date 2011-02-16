@@ -1,7 +1,7 @@
 <?php
 // Load all the required files
 require_once(dirname(__FILE__) . '/settings.php');
-require_once(dirname(__FILE__) . '/lib/db.inc');
+require_once(dirname(__FILE__) . '/lib/file.inc');
 require_once(dirname(__FILE__) . '/lib/token.inc');
 require_once(dirname(__FILE__) . '/lib/message_stack.inc');
 
@@ -15,19 +15,18 @@ if (isset($_POST) && !empty($_POST)) {
     // Validation below is very primitive and has been kept that way for simplicity
     // However, it is important to thoroughly validate the input before using it or storing it
     // Otherwise, your site code become susceptible to code injection/SQL injection.
-    $save_to_database = true; 
+    $save = true; 
     if (empty($_POST['name'])) {
-	    $save_to_database = false;
+	    $save = false;
 	    message_stack_add('Required field name is empty');
     }
     if (empty($_POST['comment'])) {
-	    $save_to_database = false;
+	    $save = false;
 	    message_stack_add('Required field comment is empty');
     }
 	    
-    if ($save_to_database) {
-	    // Insert into the database
-	    db_sign_guestbook($_POST['name'], $_POST['comment'], $_POST['faculty'], $_POST['email_updates'], date('r'));
+    if ($save) {
+	    file_sign_guestbook($_POST['name'], $_POST['comment']);
     }
   }
   else {
@@ -41,7 +40,7 @@ if (isset($_POST) && !empty($_POST)) {
 // Variables to be inserted into the template
 $variables = array(
 	'messages' => message_stack_get(),
-	'entries' => db_fetch_guestbook_entries(),
+	'entries' => file_fetch_guestbook_entries(),
   'current_time' => time(),
   'form_token' => token_get()
 );

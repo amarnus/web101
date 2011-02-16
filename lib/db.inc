@@ -29,6 +29,8 @@ function db_connect() {
  * 
  * @param string $name
  *   Name of the user
+ * @param string $comment
+ *   Comment entered by the user
  * @param string $faculty
  *   Faculty of Study
  * @param boolean $updates
@@ -37,11 +39,11 @@ function db_connect() {
  *   Time when the user signed up
  *
  */
-function db_sign_guestbook($name, $message, $faculty, $updates, $time) {
+function db_sign_guestbook($name, $comment, $faculty, $updates, $time) {
   if (!($link = db_connect()))
     return;
-  list($name, $message, $faculty, $updates, $time) = array_map('mysql_real_escape_string', array($name, $message, $faculty, $updates, $time));
-  $sql = "INSERT INTO guestbook_entries (name, comment, faculty, email_updates, timestamp) VALUES ('$name', '$message', '$faculty', '$updates', '$time')";
+  list($name, $comment, $faculty, $updates, $time) = array_map('mysql_real_escape_string', array($name, $comment, $faculty, $updates, $time));
+  $sql = "INSERT INTO guestbook_entries (name, comment, faculty, email_updates, timestamp) VALUES ('$name', '$comment', '$faculty', '$updates', '$time')";
   mysql_query($sql); // Run the SQL
   if (mysql_errno($link) != 0) { // Implies there was a error
 	  message_stack_add(mysql_error()); // Report the error
