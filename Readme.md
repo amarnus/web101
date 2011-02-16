@@ -1,11 +1,15 @@
-This is the demo application for NUS ACM's Web 101 workshop.
+<p>This is the demo application for my Web101 talk.</p>
 
-Slides
-http://nusacm.org/l/2de4
-
-Workshop home
-http://nusacm.org/web101/
-
-Live demo
-http://nusacm.org/guestbook_demo
+<p>
+	Slides
+  <a href="http://nusacm.org/l/2de4" target="_blank"></a>
+</p>
+<p>
+  Workshop home
+  <a href="http://nusacm.org/web101" target="_blank"></a>
+</p>
+<p>
+  Live demo
+  <a href="http://nusacm.org/guestbook_demo" target="_blank"></a>
+</p>
 
