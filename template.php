@@ -100,7 +100,7 @@
               <input type="submit" value="Save">
             </div>
             <!-- Hidden values (to be set dynamically by the server) -->
-            <input type="hidden" name="values[]" values="">
+            <input type="hidden" name="values[]" value="">
             <input type="hidden" name="values[current_time]" value="<?php print $current_time; ?>">
             <input type="hidden" name="values[form_token]" value="<?php print $form_token; ?>">
           </fieldset>

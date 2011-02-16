@@ -15,7 +15,7 @@ function file_sign_guestbook($name, $comment) {
     $entry = array(
       'name' => $name,
       'comment' => $comment,
-      'timestamp' => date('r')
+      'timestamp' => date('c')
     );
     fwrite($fp, serialize($entry) . "\n"); // Serializing converts the array to a string
     flock($fp, LOCK_UN); // Release the lock
