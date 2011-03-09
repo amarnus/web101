@@ -14,7 +14,7 @@ if (isset($_POST) && !empty($_POST)) {
     // Required parameters are name, comment
     // Validation below is very primitive and has been kept that way for simplicity
     // However, it is important to thoroughly validate the input before using it or storing it
-    // Otherwise, your site code become susceptible to code injection/SQL injection.
+    // Otherwise, your app becomes susceptible to a code injection/SQL injection attack.
     $save = true; 
     if (empty($_POST['name'])) {
       $save = false;
